@@ -1,0 +1,15 @@
+export default {
+  up_arrow: 'Arrow Up',
+  down_arrow: 'Arrow Down',
+  left_arrow: 'Arrow Left',
+  right_arrow: 'Arrow Right',
+  fn: 'Function',
+  return_or_enter: 'Enter',
+  delete_or_backspace: 'Backspace',
+  delete_forward: 'Delete',
+  hyphen: 'Hyphen: -',
+  equal_sign: 'Equal Sign: =',
+  open_bracket: 'Open Bracket: [',
+  close_bracket: 'Close Bracket: ]',
+  quote: 'Quote (\')',
+};
