@@ -62,9 +62,3 @@ export default {
   },
 };
 </script>
-
-<style scoped lang="scss">
-::v-deep .listbox {
-  background: red;
-}
-</style>

@@ -1,9 +1,11 @@
 <template>
-  <v-row>
-    <v-col cols="12" md="6"></v-col>
+  <v-row class="fill-height">
+    <v-col cols="12" md="6">
+      <v-sheet class="fill-height"></v-sheet>
+    </v-col>
     <v-col cols="12" md="6">
       <!-- TEMP TESTING -->
-      <v-sheet class="pa-4">
+      <v-sheet class="fill-height pa-4" color="primary">
         <v-btn class="mx-1" x-small @click="clearStorage">Clear storage</v-btn>
         <div class="d-flex align-center">
           <v-btn class="ma-1" x-small @click="onAddList">Add list</v-btn>

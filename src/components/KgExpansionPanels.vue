@@ -26,14 +26,3 @@ export default {
   },
 };
 </script>
-
-<style scoped lang="scss">
-.v-expansion-panels {
-  .v-expansion-panel-header {
-    font-size: 0.75rem;
-    padding: 0 1rem;
-    min-height: 32px;
-  }
-}
-
-</style>

@@ -12,9 +12,9 @@ export default new Vuetify({
     dark: true,
     themes: {
       dark: {
-        primary: '#007BFF',
+        primary: '#6c89a7',
         secondary: '#424242',
-        tertiary: '#FF0000',
+        tertiary: '#303750',
         accent: '#82B1FF',
         error: '#FF5252',
         info: '#2196F3',
@@ -22,9 +22,9 @@ export default new Vuetify({
         warning: '#FFC107',
       },
       light: {
-        primary: '#007BFF',
+        primary: '#6c89a7',
         secondary: '#424242',
-        tertiary: '#FF0000',
+        tertiary: '#303750 ',
         accent: '#82B1FF',
         error: '#FF5252',
         info: '#2196F3',
