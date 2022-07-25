@@ -6,16 +6,16 @@
       <v-sheet class="pa-4">
         <v-btn class="mx-1" x-small @click="clearStorage">Clear storage</v-btn>
         <div class="d-flex align-center">
-          <v-btn class="mx-1" x-small @click="onAddList">Add list</v-btn>
-          <v-btn class="mx-1" x-small @click="onDeleteList">Delete list</v-btn>
+          <v-btn class="ma-1" x-small @click="onAddList">Add list</v-btn>
+          <v-btn class="ma-1" x-small @click="onDeleteList">Delete list</v-btn>
         </div>
         <div class="d-flex align-center">
-          <v-btn class="mx-1" x-small @click="onAddRules">Add rules</v-btn>
-          <v-btn class="mx-1" x-small @click="onDeleteRules">Delete rules</v-btn>
+          <v-btn class="ma-1" x-small @click="onAddRules">Add rules</v-btn>
+          <v-btn class="ma-1" x-small @click="onDeleteRules">Delete rules</v-btn>
         </div>
         <div class="d-flex align-center">
-          <v-btn class="mx-1" x-small @click="onAddManipulator">Add manipulator</v-btn>
-          <v-btn class="mx-1" x-small @click="onDeleteManipulator">Delete manipulator</v-btn>
+          <v-btn class="ma-1" x-small @click="onAddManipulator">Add manipulator</v-btn>
+          <v-btn class="ma-1" x-small @click="onDeleteManipulator">Delete manipulator</v-btn>
         </div>
       </v-sheet>
     </v-col>

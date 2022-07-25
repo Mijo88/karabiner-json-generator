@@ -33,7 +33,8 @@ export default new Vuex.Store({
       const id = uuid();
       const list = {
         id,
-        description: `List: ${id}`,
+        placeholder: `Rules ${id}`,
+        description: '',
       };
       state.lists = [...state.lists, list];
     },
@@ -42,8 +43,11 @@ export default new Vuex.Store({
     },
     // RULES
     [ADD_RULES](state, payload) {
+      const id = uuid();
       const rules = {
-        id: uuid(),
+        id,
+        placeholder: `Manipulators ${id}`,
+        label: '',
         list_id: payload.list_id,
       };
       state.rules = [...state.rules, rules];
@@ -53,15 +57,18 @@ export default new Vuex.Store({
     },
     // MANIPULATORS
     [ADD_MANIPULATOR](state, payload) {
+      const id = uuid();
       const manipulator = {
-        id: uuid(),
+        id,
         rules_id: payload.rules_id,
+        placeholder: `Manipulator ${id}`,
+        label: '',
         data: {},
       };
       state.manipulators = [...state.manipulators, manipulator];
     },
     [DELETE_MANIPULATOR](state, payload) {
-      this.manipulators = this.manipulators.filter(({ id }) => id !== payload.id);
+      state.manipulators = state.manipulators.filter(({ id }) => id !== payload.id);
     },
   },
   actions: {
