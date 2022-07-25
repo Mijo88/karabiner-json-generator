@@ -10,6 +10,7 @@ import {
   DELETE_RULES,
   ADD_MANIPULATOR,
   DELETE_MANIPULATOR,
+  SET_MAIN_CONTENT_HEIGHT,
 } from '@/constants/mutations';
 
 const vuexLocal = new VuexPersistence({
@@ -24,6 +25,7 @@ export default new Vuex.Store({
     lists: [],
     rules: [],
     manipulators: [],
+    mainContentHeight: null,
   },
   getters: {
   },
@@ -69,6 +71,10 @@ export default new Vuex.Store({
     },
     [DELETE_MANIPULATOR](state, payload) {
       state.manipulators = state.manipulators.filter(({ id }) => id !== payload.id);
+    },
+    // OTHER
+    [SET_MAIN_CONTENT_HEIGHT](state, payload) {
+      state.mainContentHeight = payload;
     },
   },
   actions: {

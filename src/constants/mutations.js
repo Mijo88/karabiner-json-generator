@@ -6,3 +6,5 @@ export const DELETE_RULES = 'delete_rules';
 
 export const ADD_MANIPULATOR = 'add_manipulator';
 export const DELETE_MANIPULATOR = 'delete_manipulator';
+
+export const SET_MAIN_CONTENT_HEIGHT = 'set_main_content_height';

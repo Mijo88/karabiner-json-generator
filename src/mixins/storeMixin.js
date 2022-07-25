@@ -5,6 +5,7 @@ import {
   DELETE_RULES,
   ADD_MANIPULATOR,
   DELETE_MANIPULATOR,
+  SET_MAIN_CONTENT_HEIGHT,
 } from '@/constants/mutations';
 
 export default {
@@ -29,6 +30,9 @@ export default {
     },
     deleteManipulator(manipulatorId) {
       this.$store.commit(DELETE_MANIPULATOR, { id: manipulatorId });
+    },
+    commitMainContentHeight(heightPx) {
+      this.$store.commit(SET_MAIN_CONTENT_HEIGHT, heightPx);
     },
   },
 };

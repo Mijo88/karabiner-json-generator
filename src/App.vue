@@ -20,11 +20,25 @@
 </template>
 
 <script>
+import { storeMixin } from '@/mixins';
 
 export default {
   name: 'App',
-  data: () => ({
-    //
-  }),
+  data() {
+    return {};
+  },
+  mixins: [storeMixin],
+  mounted() {
+    this.setMainContentHeight();
+    window.addEventListener('resize', this.setMainContentHeight);
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.setMainContentHeight);
+  },
+  methods: {
+    setMainContentHeight() {
+      this.commitMainContentHeight(window.innerHeight - 124);
+    },
+  },
 };
 </script>

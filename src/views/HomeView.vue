@@ -1,24 +1,44 @@
 <template>
   <v-row class="fill-height">
     <v-col cols="12" md="6">
-      <v-sheet class="fill-height"></v-sheet>
+      <kg-rules />
     </v-col>
     <v-col cols="12" md="6">
       <!-- TEMP TESTING -->
-      <v-sheet class="fill-height pa-4" color="primary">
-        <v-btn class="mx-1" x-small @click="clearStorage">Clear storage</v-btn>
-        <div class="d-flex align-center">
-          <v-btn class="ma-1" x-small @click="onAddList">Add list</v-btn>
-          <v-btn class="ma-1" x-small @click="onDeleteList">Delete list</v-btn>
-        </div>
-        <div class="d-flex align-center">
-          <v-btn class="ma-1" x-small @click="onAddRules">Add rules</v-btn>
-          <v-btn class="ma-1" x-small @click="onDeleteRules">Delete rules</v-btn>
-        </div>
-        <div class="d-flex align-center">
-          <v-btn class="ma-1" x-small @click="onAddManipulator">Add manipulator</v-btn>
-          <v-btn class="ma-1" x-small @click="onDeleteManipulator">Delete manipulator</v-btn>
-        </div>
+      <v-sheet
+        class="fill-height pa-4 overflow-y-hidden"
+        color="primary"
+        :height="mainContentHeight"
+      >
+        <v-sheet
+          class="overflow-y-auto"
+          color="primary"
+          :height="mainContentHeight - 32"
+        >
+          <div class="text-overline text-center">
+            Track changes in Vue DevTools extension
+          </div>
+          <v-divider class="my-2" />
+          <div class="d-flex align-center">
+            <v-btn class="mx-1" x-small @click="clearStorage">Clear storage</v-btn>
+          </div>
+          <v-divider class="my-2" />
+          <div class="d-flex align-center">
+            <v-btn class="mx-1" x-small @click="onAddList">Add list</v-btn>
+            <v-btn class="mx-1" x-small @click="onDeleteList">Delete list</v-btn>
+          </div>
+          <v-divider class="my-2" />
+          <div class="d-flex align-center">
+            <v-btn class="mx-1" x-small @click="onAddRules">Add rules</v-btn>
+            <v-btn class="mx-1" x-small @click="onDeleteRules">Delete rules</v-btn>
+          </div>
+          <v-divider class="my-2" />
+          <div class="d-flex align-center">
+            <v-btn class="mx-1" x-small @click="onAddManipulator">Add manipulator</v-btn>
+            <v-btn class="mx-1" x-small @click="onDeleteManipulator">Delete manipulator</v-btn>
+          </div>
+          <v-divider class="my-2" />
+        </v-sheet>
       </v-sheet>
     </v-col>
   </v-row>
@@ -36,7 +56,7 @@ export default {
     return {};
   },
   computed: {
-    ...mapState(['lists', 'rules', 'manipulators']),
+    ...mapState(['lists', 'rules', 'manipulators', 'mainContentHeight']),
   },
   mounted() {},
   methods: {
@@ -55,6 +75,8 @@ export default {
     },
 
     onAddRules() {
+      if (this.lists.length < 1) return;
+
       this.addRules(this.lists[0].id);
     },
 
@@ -65,6 +87,8 @@ export default {
     },
 
     onAddManipulator() {
+      if (this.rules.length < 1) return;
+
       this.addManipulator(this.rules[0].id);
     },
 
