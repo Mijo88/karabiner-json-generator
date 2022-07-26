@@ -1,0 +1,14 @@
+.v-input__slot {
+  min-height: 0 !important;
+}
+
+.v-text-field__slot {
+  label {
+    font-size: 0.8rem;
+  }
+
+  input[type="text"] {
+    font-size: 0.8rem !important;
+    padding: 4px 0;
+  }
+}

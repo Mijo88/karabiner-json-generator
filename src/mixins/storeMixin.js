@@ -6,6 +6,7 @@ import {
   ADD_MANIPULATOR,
   DELETE_MANIPULATOR,
   SET_MAIN_CONTENT_HEIGHT,
+  UPDATE_LIST,
 } from '@/constants/mutations';
 
 export default {
@@ -16,6 +17,9 @@ export default {
     },
     deleteList(listId) {
       this.$store.commit(DELETE_LIST, { id: listId });
+    },
+    updateList(list) {
+      this.$store.commit(UPDATE_LIST, list);
     },
     // RULES
     addRules(listId) {

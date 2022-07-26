@@ -11,6 +11,7 @@ import {
   ADD_MANIPULATOR,
   DELETE_MANIPULATOR,
   SET_MAIN_CONTENT_HEIGHT,
+  UPDATE_LIST,
 } from '@/constants/mutations';
 
 const vuexLocal = new VuexPersistence({
@@ -42,6 +43,11 @@ export default new Vuex.Store({
     },
     [DELETE_LIST](state, payload) {
       state.lists = state.lists.filter(({ id }) => id !== payload.id);
+    },
+    [UPDATE_LIST](state, payload) {
+      state.lists = state.lists.reduce((newState, list) => (
+        [...newState, list.id === payload.id ? payload : list]
+      ), []);
     },
     // RULES
     [ADD_RULES](state, payload) {

@@ -1,0 +1,10 @@
+$expansion-container-padding: 8px 16px !important;
+
+.v-expansion-panel-header {
+  min-height: 0 !important;
+  padding: $expansion-container-padding;
+}
+
+.v-expansion-panel-content__wrap {
+  padding: $expansion-container-padding;
+}

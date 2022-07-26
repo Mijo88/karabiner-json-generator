@@ -9,20 +9,19 @@
       color="primary"
       :height="mainContentHeight - 32"
     >
-      <v-expansion-panels color="primary" dense>
+      <v-expansion-panels color="primary" dense accordion>
         <v-expansion-panel
           v-for="list in lists"
           :key="`list-${list.id}`"
         >
           <v-expansion-panel-header>
-            {{ list.description || list.placeholder }}
+              <div class="text-caption">
+                {{ list.description || list.placeholder }}
+              </div>
           </v-expansion-panel-header>
-          <v-expansion-panel-content color="tertiary">
-            <!-- PLACEHOLDER -->
-            <div class="text-overline">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </div>
-          </v-expansion-panel-content>
+          <kg-rules-content
+            :list="list"
+          />
         </v-expansion-panel>
       </v-expansion-panels>
     </v-sheet>
@@ -32,13 +31,13 @@
 <script>
 import { mapState } from 'vuex';
 
-import { storeMixin } from '@/mixins';
+import KgRulesContent from './KgRulesContent.vue';
 
 export default {
+  components: { KgRulesContent },
   name: 'KgRules',
-  mixins: [storeMixin],
   computed: {
-    ...mapState(['lists', 'rules', 'manipulators', 'mainContentHeight']),
+    ...mapState(['lists', 'mainContentHeight']),
   },
 };
 </script>
