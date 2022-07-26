@@ -31,10 +31,7 @@
 <script>
 import { mapState } from 'vuex';
 
-import KgRulesContent from './KgRulesContent.vue';
-
 export default {
-  components: { KgRulesContent },
   name: 'KgRules',
   computed: {
     ...mapState(['lists', 'mainContentHeight']),
